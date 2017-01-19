@@ -164,10 +164,11 @@
 - (void)scrollToButtonAtIndex:(NSInteger)index{
     
     @try {
-        UIButton *oldSelectedButton = self.buttonArray[self.currentIndex];
-        oldSelectedButton.selected = NO;
         
         UIButton *newSelectedButton = self.buttonArray[index];
+        UIButton *oldSelectedButton = self.buttonArray[self.currentIndex];
+        
+        oldSelectedButton.selected = NO;
         newSelectedButton.selected = YES;
         self.currentIndex = index;
         

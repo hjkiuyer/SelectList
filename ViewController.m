@@ -23,10 +23,12 @@
     [super viewDidLoad];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.titleLabel.font = [UIFont systemFontOfSize:13];
     button.frame = CGRectMake((375 - 100) / 2.0, 400, 100, 40);
     [button addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"点击跳转" forState: UIControlStateNormal];
+    [button setTitle:@"跳转至下标3" forState: UIControlStateNormal];
     button.backgroundColor = [UIColor grayColor];
+    [button sizeToFit];
     [self.view addSubview:button];
     
     self.label = [[UILabel alloc] init];
@@ -52,7 +54,7 @@
 
 - (void)action:(UIButton *)sender{
     
-    [self.listView scrollToButtonAtIndex:7];
+    [self.listView scrollToButtonAtIndex:3];
     
 }
 
